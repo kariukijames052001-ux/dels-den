@@ -11,7 +11,15 @@
 
 <script>
 async function buy(){
- alert("Backend connected successfully 🔥");
+    try {
+        const res = await fetch('https://dels-den.onrender.com');
+        const text = await res.text();
+        alert(text);
+    } catch (error) {
+        alert("Error connecting to server ❌");
+    }
+</script>
+
 }
 </script>
 
