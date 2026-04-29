@@ -7,409 +7,183 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial, Helvetica, sans-serif;
-}
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,Helvetica,sans-serif}
+body{background:#f5f5f5;color:#111}
+a{text-decoration:none}
 
-body{
-background:#f5f5f5;
-color:#111;
+/* TOP */
+.topbar{
+background:#000;color:#fff;padding:10px 30px;
+display:flex;justify-content:space-between;flex-wrap:wrap;font-size:14px
 }
-
-/* TOP BAR */
-.top-bar{
-background:#000;
-color:#fff;
-padding:10px 40px;
-display:flex;
-justify-content:space-between;
-font-size:14px;
-}
-
-.top-left span{
-margin-right:30px;
-}
-
-.top-right{
-color:#f9a602;
-font-weight:bold;
-}
+.topbar .right{color:#f9a602;font-weight:bold}
 
 /* HEADER */
 .header{
-background:#111;
-padding:18px 40px;
-display:flex;
-align-items:center;
-justify-content:space-between;
-gap:25px;
+background:#111;padding:18px 30px;
+display:flex;align-items:center;gap:20px;flex-wrap:wrap
 }
-
 .logo{
-font-size:42px;
-font-weight:900;
-color:#fff;
+font-size:42px;font-weight:900;color:#fff
 }
-
-.logo span{
-color:#f9a602;
+.logo span{color:#f9a602}
+.search{
+flex:1;display:flex;min-width:260px
 }
-
-.search-box{
-flex:1;
-display:flex;
+.search input{
+flex:1;padding:14px;border:none;border-radius:8px 0 0 8px;font-size:16px
 }
-
-.search-box input{
-width:100%;
-padding:16px;
-border:none;
-font-size:16px;
-border-radius:6px 0 0 6px;
+.search button{
+padding:14px 24px;border:none;background:#f9a602;font-weight:bold;cursor:pointer;
+border-radius:0 8px 8px 0
 }
-
-.search-box button{
-background:#f9a602;
-border:none;
-padding:16px 28px;
-font-weight:bold;
-cursor:pointer;
-border-radius:0 6px 6px 0;
+.icons{
+display:flex;gap:20px;color:#fff;font-size:14px;align-items:center
 }
-
-.header-icons{
-display:flex;
-gap:25px;
-color:#fff;
-font-size:14px;
-}
+.icons div{cursor:pointer}
 
 /* NAV */
 .nav{
-background:#000;
-padding:16px 40px;
-display:flex;
-gap:30px;
-align-items:center;
+background:#000;padding:14px 30px;
+display:flex;gap:25px;flex-wrap:wrap;color:#fff;font-weight:bold
 }
-
-.nav a{
-text-decoration:none;
-color:#fff;
-font-weight:bold;
-}
-
-.nav a:hover{
-color:#f9a602;
-}
-
-.cat-btn{
-background:#f9a602;
-padding:12px 20px;
-border-radius:6px;
-color:#000;
-font-weight:bold;
+.nav .cat{
+background:#f9a602;color:#000;padding:8px 14px;border-radius:6px
 }
 
 /* HERO */
 .hero{
 background:linear-gradient(to right,#000,#111);
-padding:60px 50px;
-display:flex;
-justify-content:space-between;
-align-items:center;
-color:#fff;
+padding:60px 30px;
+display:grid;grid-template-columns:1.1fr .9fr;
+gap:30px;align-items:center;color:#fff
 }
-
-.hero-text{
-max-width:55%;
-}
-
-.hero small{
-color:#f9a602;
-font-weight:bold;
-font-size:18px;
-}
-
 .hero h1{
-font-size:72px;
-line-height:1.05;
-margin:15px 0;
+font-size:56px;line-height:1.1;margin-bottom:15px
 }
-
-.hero h1 span{
-color:#f9a602;
-}
-
-.hero p{
-font-size:24px;
-color:#ddd;
-margin-bottom:30px;
-}
-
+.hero h1 span{color:#f9a602}
+.hero p{font-size:20px;color:#ddd;margin-bottom:25px}
 .hero button{
-background:#f9a602;
-border:none;
-padding:18px 35px;
-font-size:20px;
-font-weight:bold;
-cursor:pointer;
-border-radius:8px;
-transition:0.3s;
+padding:15px 30px;border:none;background:#f9a602;
+font-size:18px;font-weight:bold;border-radius:8px;cursor:pointer
 }
-
-.hero button:hover{
-background:#ffb800;
-transform:translateY(-2px);
-}
-
 .hero img{
-width:620px;
-max-width:100%;
-border-radius:18px;
-box-shadow:0 15px 35px rgba(0,0,0,0.45);
-object-fit:cover;
+width:100%;border-radius:16px;box-shadow:0 15px 35px rgba(0,0,0,.4)
 }
+
 /* SECTION */
-.section{
-padding:50px 40px;
-}
-
+.section{padding:45px 30px}
 .section-title{
-display:flex;
-justify-content:space-between;
-margin-bottom:25px;
-align-items:center;
+display:flex;justify-content:space-between;align-items:center;
+margin-bottom:20px
 }
+.section-title h2{font-size:32px}
+.section-title a{color:#f9a602;font-weight:bold}
 
-.section-title h2{
-font-size:34px;
-}
-
-.section-title a{
-color:#f9a602;
-font-weight:bold;
-text-decoration:none;
-}
-
-/* GRID */
 .grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
-gap:18px;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:18px
 }
 
 .card{
-background:#fff;
-padding:22px;
-border-radius:10px;
-text-align:center;
-box-shadow:0 4px 12px rgba(0,0,0,0.08);
+background:#fff;border-radius:12px;padding:18px;
+box-shadow:0 4px 12px rgba(0,0,0,.08);text-align:center
 }
-
 .card img{
-width:95px;
-height:95px;
-object-fit:contain;
-margin-bottom:15px;
+width:100%;height:170px;object-fit:cover;border-radius:10px;margin-bottom:12px
 }
-
-.card h3{
-font-size:20px;
-margin-bottom:8px;
-}
-
-.price{
-font-size:22px;
-font-weight:bold;
-color:#111;
-}
-
-.old{
-text-decoration:line-through;
-color:#888;
-font-size:14px;
-}
-
+.card h3{font-size:20px;margin-bottom:8px}
+.price{font-size:22px;font-weight:bold;color:#111}
+.old{font-size:14px;color:#888;text-decoration:line-through}
 .badge{
-background:red;
-color:#fff;
-padding:4px 8px;
-font-size:12px;
-border-radius:5px;
-display:inline-block;
-margin-bottom:10px;
+display:inline-block;background:red;color:#fff;
+padding:4px 8px;border-radius:5px;font-size:12px;margin-bottom:10px
+}
+.buy-btn{
+margin-top:12px;width:100%;padding:12px;border:none;
+background:#f9a602;font-weight:bold;border-radius:8px;cursor:pointer
+}
+
+/* CART */
+#cart-popup{
+display:none;position:fixed;top:50%;left:50%;
+transform:translate(-50%,-50%);
+background:#fff;width:92%;max-width:420px;
+padding:25px;border-radius:14px;
+box-shadow:0 10px 35px rgba(0,0,0,.35);
+z-index:9999;max-height:80vh;overflow:auto
 }
 
 /* FOOTER */
 footer{
-background:#111;
-color:#fff;
-text-align:center;
-padding:30px;
-font-size:18px;
-margin-top:40px;
+background:#111;color:#fff;text-align:center;
+padding:30px;margin-top:40px
 }
 
 /* WHATSAPP */
 .whatsapp{
-position:fixed;
-right:20px;
-bottom:20px;
-background:#25d366;
-color:#fff;
-padding:18px 20px;
-border-radius:50%;
-font-size:30px;
-text-decoration:none;
-box-shadow:0 5px 20px rgba(0,0,0,0.3);
+position:fixed;right:20px;bottom:20px;
+background:#25d366;color:#fff;
+padding:18px 20px;border-radius:50%;
+font-size:28px
 }
 
 /* MOBILE */
 @media(max-width:900px){
-
-.header{
-flex-direction:column;
-}
-
-.hero{
-flex-direction:column;
-text-align:center;
-}
-
-.hero-text{
-max-width:100%;
-}
-
-.hero h1{
-font-size:44px;
-}
-
-.hero img{
-width:280px;
-margin-top:30px;
-}
-
-.nav{
-flex-wrap:wrap;
-}
-
+.hero{grid-template-columns:1fr}
+.hero h1{font-size:38px}
+.header{flex-direction:column;align-items:stretch}
+.icons{justify-content:center}
 }
 </style>
 </head>
 
 <body>
 
-<!-- TOP BAR -->
-<div class="top-bar">
-<div class="top-left">
-<span>🚚 Fast Delivery Across Kenya</span>
-<span>🛡 Genuine Quality Parts</span>
-<span>💰 Best Prices Guarantee</span>
+<div class="topbar">
+<div>🚚 Fast Delivery Across Kenya | 🛡 Genuine Parts | 💰 Best Prices</div>
+<div class="right">Need Help? WhatsApp +254714581031</div>
 </div>
 
-<div class="top-right">
-Need Help? Call/WhatsApp 0714581031
-</div>
-</div>
-
-<!-- HEADER -->
 <div class="header">
-
 <div class="logo">DEL'S <span>DEN</span></div>
 
-<div class="search-box">
-<input type="text" placeholder="Search for parts (e.g Brake Pads, Chain, Oil)...">
-<button><i class="fa fa-search"></i> Search</button>
+<div class="search">
+<input type="text" placeholder="Search Brake Pads, Chain, Oil...">
+<button>Search</button>
 </div>
 
-<div class="header-icons">
-<div><i class="fa fa-user"></i> Account</div>
-<div><i class="fa fa-heart"></i> Wishlist</div>
-<div><i class="fa fa-cart-shopping"></i> Cart</div>
+<div class="icons">
+<div>👤 Account</div>
+<div>❤ Wishlist</div>
+<div onclick="openCart()">🛒 Cart (<span id="cart-count">0</span>)</div>
+</div>
 </div>
 
-</div>
-
-<!-- NAV -->
 <div class="nav">
-<div class="cat-btn"><i class="fa fa-bars"></i> All Categories</div>
-
-<a href="#">Home</a>
-<a href="#">Brands</a>
-<a href="#">Shop</a>
-<a href="#">Special Offers</a>
-<a href="#">Track Order</a>
-<a href="#">Contact</a>
+<div class="cat">☰ All Categories</div>
+<div>Home</div>
+<div>Brands</div>
+<div>Shop</div>
+<div>Offers</div>
+<div>Track Order</div>
+<div>Contact</div>
 </div>
 
-<!-- HERO -->
 <section class="hero">
-
-<div class="hero-text">
-<small>PREMIUM QUALITY</small>
-
+<div>
 <h1>Motorbike Spare Parts <span>& Accessories</span></h1>
-
-<p>High quality genuine motorbike parts for all major brands.</p>
-
-<button onclick="buy()">SHOP NOW</button>
+<p>Brake pads, chains, tyres, batteries, oils and engine parts.</p>
+<button onclick="scrollToDeals()">SHOP NOW</button>
 </div>
 
-<img src="https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=900&q=80">
-
+<div>
+<img src="https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=1000&q=80">
+</div>
 </section>
 
-<!-- CATEGORY -->
 <section class="section">
-
-<div class="section-title">
-<h2>SHOP BY CATEGORY</h2>
-<a href="#">View all</a>
-</div>
-
-<div class="grid">
-
-<div class="card">
-<img src="https://cdn-icons-png.flaticon.com/512/1995/1995574.png">
-<h3>Brake System</h3>
-</div>
-
-<div class="card">
-<img src="https://cdn-icons-png.flaticon.com/512/3081/3081559.png">
-<h3>Chains & Sprockets</h3>
-</div>
-
-<div class="card">
-<img src="https://cdn-icons-png.flaticon.com/512/743/743922.png">
-<h3>Tyres & Tubes</h3>
-</div>
-
-<div class="card">
-<img src="https://cdn-icons-png.flaticon.com/512/2871/2871114.png">
-<h3>Engine Parts</h3>
-</div>
-
-<div class="card">
-<img src="https://cdn-icons-png.flaticon.com/512/2933/2933245.png">
-<h3>Oil & Lubricants</h3>
-</div>
-
-<div class="card">
-<img src="https://cdn-icons-png.flaticon.com/512/1048/1048949.png">
-<h3>Body Parts</h3>
-</div>
-
-</div>
-
-</section>
-
-<!-- DEALS -->
-<section class="section">
-
 <div class="section-title">
 <h2>BEST DEALS THIS WEEK</h2>
 <a href="#">View all</a>
@@ -419,83 +193,126 @@ Need Help? Call/WhatsApp 0714581031
 
 <div class="card">
 <div class="badge">-15%</div>
+<img src="https://images.unsplash.com/photo-1613214150384-a24eb5f3e0c1?auto=format&fit=crop&w=600&q=80">
 <h3>Brake Pads</h3>
 <div class="price">KSh 600</div>
 <div class="old">KSh 700</div>
+<button class="buy-btn" onclick="addToCart('Brake Pads',600)">Add To Cart</button>
 </div>
 
 <div class="card">
 <div class="badge">-10%</div>
+<img src="https://images.unsplash.com/photo-1607860108855-64acf2078ed9?auto=format&fit=crop&w=600&q=80">
 <h3>Drive Chain Kit</h3>
 <div class="price">KSh 1,800</div>
 <div class="old">KSh 2,000</div>
+<button class="buy-btn" onclick="addToCart('Drive Chain Kit',1800)">Add To Cart</button>
 </div>
 
 <div class="card">
 <div class="badge">-20%</div>
+<img src="https://images.unsplash.com/photo-1622021142947-da7dedc7c39a?auto=format&fit=crop&w=600&q=80">
 <h3>Motorbike Tyre</h3>
 <div class="price">KSh 3,200</div>
 <div class="old">KSh 4,000</div>
+<button class="buy-btn" onclick="addToCart('Motorbike Tyre',3200)">Add To Cart</button>
 </div>
 
 <div class="card">
 <div class="badge">-15%</div>
+<img src="https://images.unsplash.com/photo-1600661653561-629509216228?auto=format&fit=crop&w=600&q=80">
 <h3>Engine Oil</h3>
 <div class="price">KSh 850</div>
 <div class="old">KSh 1,000</div>
-</div>
-
-<div class="card">
-<div class="badge">-10%</div>
-<h3>Spark Plug</h3>
-<div class="price">KSh 250</div>
-<div class="old">KSh 280</div>
-</div>
-
-<div class="card">
-<div class="badge">-12%</div>
-<h3>Battery</h3>
-<div class="price">KSh 2,800</div>
-<div class="old">KSh 3,200</div>
+<button class="buy-btn" onclick="addToCart('Engine Oil',850)">Add To Cart</button>
 </div>
 
 </div>
-
 </section>
+
+<div id="cart-popup">
+<h2>🛒 Your Cart</h2>
+<div id="cart-items" style="margin-top:15px"></div>
+<h3 style="margin-top:15px">Total: KSh <span id="cart-total">0</span></h3>
+
+<button onclick="checkoutWhatsApp()" class="buy-btn" style="background:#25d366;color:#fff;margin-top:15px">
+Checkout WhatsApp
+</button>
+
+<button onclick="closeCart()" class="buy-btn" style="background:#111;color:#fff;margin-top:10px">
+Close
+</button>
+</div>
 
 <footer>
 DEL'S DEN © 2026 | Ride The Dream 🔥
 </footer>
 
-<a href="https://wa.me/254714581031" target="_blank" class="whatsapp">
-<i class="fab fa-whatsapp"></i>
-</a>
+<a class="whatsapp" href="https://wa.me/254714581031">💬</a>
 
 <script>
-async function buy(){
+let cart=[];
 
-const phone = prompt("Enter M-Pesa Number:");
-
-if(!phone) return;
-
-try{
-
-const res = await fetch("https://dels-den.onrender.com/order",{
-method:"POST",
-headers:{
-"Content-Type":"application/json"
-},
-body:JSON.stringify({phone})
-});
-
-const data = await res.json();
-
-alert(data.message);
-
-}catch(error){
-alert("Server Error ❌");
+function addToCart(name,price){
+cart.push({name,price});
+updateCart();
+alert(name+" added to cart");
 }
 
+function updateCart(){
+document.getElementById("cart-count").innerText=cart.length;
+
+let html="";
+let total=0;
+
+cart.forEach((item,index)=>{
+total+=item.price;
+html+=`
+<div style="display:flex;justify-content:space-between;border-bottom:1px solid #eee;padding:8px 0">
+<span>${item.name}</span>
+<div>
+KSh ${item.price}
+<button onclick="removeItem(${index})" style="margin-left:8px;background:red;color:#fff;border:none;padding:4px 8px;border-radius:4px">X</button>
+</div>
+</div>
+`;
+});
+
+document.getElementById("cart-items").innerHTML=html || "Cart is empty";
+document.getElementById("cart-total").innerText=total;
+}
+
+function removeItem(i){
+cart.splice(i,1);
+updateCart();
+}
+
+function openCart(){
+document.getElementById("cart-popup").style.display="block";
+}
+
+function closeCart(){
+document.getElementById("cart-popup").style.display="none";
+}
+
+function checkoutWhatsApp(){
+if(cart.length===0){alert("Cart is empty");return;}
+
+let msg="Hello DEL'S DEN, I want:%0A";
+let total=0;
+
+cart.forEach(item=>{
+msg+="- "+item.name+" KSh "+item.price+"%0A";
+total+=item.price;
+});
+
+msg+="%0ATotal: KSh "+total;
+
+window.open("https://wa.me/254714581031?text="+msg,"_blank");
+}
+
+function scrollToDeals(){
+window.scrollTo({top:650,behavior:"smooth"});
 }
 </script>
 
