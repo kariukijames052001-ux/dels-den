@@ -20,7 +20,7 @@ color:#111;
 }
 
 /* TOP BAR */
-.topbar{
+.top-bar{
 background:#000;
 color:#fff;
 padding:10px 40px;
@@ -29,7 +29,11 @@ justify-content:space-between;
 font-size:14px;
 }
 
-.topbar span{
+.top-left span{
+margin-right:30px;
+}
+
+.top-right{
 color:#f9a602;
 font-weight:bold;
 }
@@ -37,16 +41,16 @@ font-weight:bold;
 /* HEADER */
 .header{
 background:#111;
-padding:20px 40px;
+padding:18px 40px;
 display:flex;
 align-items:center;
 justify-content:space-between;
-gap:20px;
+gap:25px;
 }
 
 .logo{
 font-size:42px;
-font-weight:bold;
+font-weight:900;
 color:#fff;
 }
 
@@ -54,46 +58,47 @@ color:#fff;
 color:#f9a602;
 }
 
-.search{
+.search-box{
 flex:1;
 display:flex;
 }
 
-.search input{
+.search-box input{
 width:100%;
-padding:15px;
+padding:16px;
 border:none;
 font-size:16px;
 border-radius:6px 0 0 6px;
 }
 
-.search button{
+.search-box button{
 background:#f9a602;
 border:none;
-padding:15px 30px;
+padding:16px 28px;
 font-weight:bold;
 cursor:pointer;
 border-radius:0 6px 6px 0;
 }
 
-.icons{
+.header-icons{
 display:flex;
 gap:25px;
 color:#fff;
-font-size:15px;
+font-size:14px;
 }
 
 /* NAV */
 .nav{
 background:#000;
-padding:15px 40px;
+padding:16px 40px;
 display:flex;
 gap:30px;
+align-items:center;
 }
 
 .nav a{
-color:#fff;
 text-decoration:none;
+color:#fff;
 font-weight:bold;
 }
 
@@ -101,24 +106,38 @@ font-weight:bold;
 color:#f9a602;
 }
 
+.cat-btn{
+background:#f9a602;
+padding:12px 20px;
+border-radius:6px;
+color:#000;
+font-weight:bold;
+}
+
 /* HERO */
 .hero{
 background:linear-gradient(to right,#000,#111);
-color:#fff;
-padding:60px 60px;
+padding:60px 50px;
 display:flex;
 justify-content:space-between;
 align-items:center;
+color:#fff;
 }
 
 .hero-text{
 max-width:55%;
 }
 
+.hero small{
+color:#f9a602;
+font-weight:bold;
+font-size:18px;
+}
+
 .hero h1{
-font-size:65px;
-line-height:1.1;
-margin-bottom:20px;
+font-size:72px;
+line-height:1.05;
+margin:15px 0;
 }
 
 .hero h1 span{
@@ -127,14 +146,14 @@ color:#f9a602;
 
 .hero p{
 font-size:24px;
-margin-bottom:30px;
 color:#ddd;
+margin-bottom:30px;
 }
 
 .hero button{
 background:#f9a602;
-padding:18px 35px;
 border:none;
+padding:18px 35px;
 font-size:20px;
 font-weight:bold;
 cursor:pointer;
@@ -142,7 +161,7 @@ border-radius:8px;
 }
 
 .hero img{
-width:430px;
+width:520px;
 }
 
 /* SECTION */
@@ -150,150 +169,214 @@ width:430px;
 padding:50px 40px;
 }
 
-.section h2{
-font-size:34px;
+.section-title{
+display:flex;
+justify-content:space-between;
 margin-bottom:25px;
+align-items:center;
 }
 
-/* CATEGORIES */
+.section-title h2{
+font-size:34px;
+}
+
+.section-title a{
+color:#f9a602;
+font-weight:bold;
+text-decoration:none;
+}
+
+/* GRID */
 .grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
-gap:20px;
+gap:18px;
 }
 
 .card{
 background:#fff;
-padding:25px;
-text-align:center;
+padding:22px;
 border-radius:10px;
-box-shadow:0 5px 15px rgba(0,0,0,0.08);
+text-align:center;
+box-shadow:0 4px 12px rgba(0,0,0,0.08);
 }
 
 .card img{
-width:80px;
-height:80px;
+width:95px;
+height:95px;
 object-fit:contain;
 margin-bottom:15px;
 }
 
 .card h3{
 font-size:20px;
+margin-bottom:8px;
 }
 
-/* DEALS */
 .price{
-color:#f9a602;
-font-weight:bold;
 font-size:22px;
-margin-top:10px;
+font-weight:bold;
+color:#111;
+}
+
+.old{
+text-decoration:line-through;
+color:#888;
+font-size:14px;
+}
+
+.badge{
+background:red;
+color:#fff;
+padding:4px 8px;
+font-size:12px;
+border-radius:5px;
+display:inline-block;
+margin-bottom:10px;
 }
 
 /* FOOTER */
 footer{
 background:#111;
 color:#fff;
-padding:35px;
 text-align:center;
-margin-top:40px;
+padding:30px;
 font-size:18px;
+margin-top:40px;
 }
 
 /* WHATSAPP */
 .whatsapp{
 position:fixed;
-bottom:20px;
 right:20px;
+bottom:20px;
 background:#25d366;
 color:#fff;
 padding:18px 20px;
 border-radius:50%;
-font-size:28px;
+font-size:30px;
 text-decoration:none;
 box-shadow:0 5px 20px rgba(0,0,0,0.3);
 }
 
+/* MOBILE */
 @media(max-width:900px){
+
+.header{
+flex-direction:column;
+}
+
 .hero{
 flex-direction:column;
 text-align:center;
 }
+
 .hero-text{
 max-width:100%;
 }
+
 .hero h1{
-font-size:42px;
+font-size:44px;
 }
+
 .hero img{
 width:280px;
 margin-top:30px;
 }
-.header{
-flex-direction:column;
+
+.nav{
+flex-wrap:wrap;
 }
+
 }
 </style>
 </head>
 
 <body>
 
-<div class="topbar">
-<div>🚚 Fast Delivery Across Kenya | ✅ Genuine Quality Parts | 💰 Best Prices</div>
-<div>Need Help? <span>WhatsApp 0723 456 789</span></div>
+<!-- TOP BAR -->
+<div class="top-bar">
+<div class="top-left">
+<span>🚚 Fast Delivery Across Kenya</span>
+<span>🛡 Genuine Quality Parts</span>
+<span>💰 Best Prices Guarantee</span>
 </div>
 
+<div class="top-right">
+Need Help? Call/WhatsApp 0714581031
+</div>
+</div>
+
+<!-- HEADER -->
 <div class="header">
+
 <div class="logo">DEL'S <span>DEN</span></div>
 
-<div class="search">
-<input type="text" placeholder="Search for brake pads, chains, oil...">
-<button>Search</button>
+<div class="search-box">
+<input type="text" placeholder="Search for parts (e.g Brake Pads, Chain, Oil)...">
+<button><i class="fa fa-search"></i> Search</button>
 </div>
 
-<div class="icons">
+<div class="header-icons">
 <div><i class="fa fa-user"></i> Account</div>
 <div><i class="fa fa-heart"></i> Wishlist</div>
 <div><i class="fa fa-cart-shopping"></i> Cart</div>
 </div>
+
 </div>
 
+<!-- NAV -->
 <div class="nav">
+<div class="cat-btn"><i class="fa fa-bars"></i> All Categories</div>
+
 <a href="#">Home</a>
 <a href="#">Brands</a>
 <a href="#">Shop</a>
-<a href="#">Deals</a>
+<a href="#">Special Offers</a>
 <a href="#">Track Order</a>
 <a href="#">Contact</a>
 </div>
 
+<!-- HERO -->
 <section class="hero">
+
 <div class="hero-text">
+<small>PREMIUM QUALITY</small>
+
 <h1>Motorbike Spare Parts <span>& Accessories</span></h1>
-<p>Premium quality parts for Boxer, TVS, Bajaj, Honda and more.</p>
-<button onclick="buy()">ORDER NOW</button>
+
+<p>High quality genuine motorbike parts for all major brands.</p>
+
+<button onclick="buy()">SHOP NOW</button>
 </div>
 
 <img src="https://cdn-icons-png.flaticon.com/512/2972/2972185.png">
+
 </section>
 
+<!-- CATEGORY -->
 <section class="section">
-<h2>Shop By Category</h2>
+
+<div class="section-title">
+<h2>SHOP BY CATEGORY</h2>
+<a href="#">View all</a>
+</div>
 
 <div class="grid">
 
 <div class="card">
 <img src="https://cdn-icons-png.flaticon.com/512/1995/1995574.png">
-<h3>Brake Pads</h3>
+<h3>Brake System</h3>
 </div>
 
 <div class="card">
 <img src="https://cdn-icons-png.flaticon.com/512/3081/3081559.png">
-<h3>Chains</h3>
+<h3>Chains & Sprockets</h3>
 </div>
 
 <div class="card">
 <img src="https://cdn-icons-png.flaticon.com/512/743/743922.png">
-<h3>Tyres</h3>
+<h3>Tyres & Tubes</h3>
 </div>
 
 <div class="card">
@@ -303,67 +386,86 @@ flex-direction:column;
 
 <div class="card">
 <img src="https://cdn-icons-png.flaticon.com/512/2933/2933245.png">
-<h3>Oil</h3>
+<h3>Oil & Lubricants</h3>
 </div>
 
 <div class="card">
 <img src="https://cdn-icons-png.flaticon.com/512/1048/1048949.png">
-<h3>Mirrors</h3>
+<h3>Body Parts</h3>
 </div>
 
 </div>
+
 </section>
 
+<!-- DEALS -->
 <section class="section">
-<h2>Best Deals This Week</h2>
+
+<div class="section-title">
+<h2>BEST DEALS THIS WEEK</h2>
+<a href="#">View all</a>
+</div>
 
 <div class="grid">
 
 <div class="card">
+<div class="badge">-15%</div>
 <h3>Brake Pads</h3>
 <div class="price">KSh 600</div>
+<div class="old">KSh 700</div>
 </div>
 
 <div class="card">
-<h3>Chain Kit</h3>
+<div class="badge">-10%</div>
+<h3>Drive Chain Kit</h3>
 <div class="price">KSh 1,800</div>
+<div class="old">KSh 2,000</div>
 </div>
 
 <div class="card">
-<h3>Tyre</h3>
+<div class="badge">-20%</div>
+<h3>Motorbike Tyre</h3>
 <div class="price">KSh 3,200</div>
+<div class="old">KSh 4,000</div>
 </div>
 
 <div class="card">
+<div class="badge">-15%</div>
 <h3>Engine Oil</h3>
 <div class="price">KSh 850</div>
+<div class="old">KSh 1,000</div>
 </div>
 
 <div class="card">
+<div class="badge">-10%</div>
 <h3>Spark Plug</h3>
 <div class="price">KSh 250</div>
+<div class="old">KSh 280</div>
 </div>
 
 <div class="card">
+<div class="badge">-12%</div>
 <h3>Battery</h3>
 <div class="price">KSh 2,800</div>
+<div class="old">KSh 3,200</div>
 </div>
 
 </div>
+
 </section>
 
 <footer>
 DEL'S DEN © 2026 | Ride The Dream 🔥
 </footer>
 
-<a class="whatsapp" href="https://wa.me/254714581031" target="_blank">
+<a href="https://wa.me/254714581031" target="_blank" class="whatsapp">
 <i class="fab fa-whatsapp"></i>
 </a>
 
 <script>
 async function buy(){
 
-const phone = prompt("Enter your M-Pesa Number:");
+const phone = prompt("Enter M-Pesa Number:");
 
 if(!phone) return;
 
