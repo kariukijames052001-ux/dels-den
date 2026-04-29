@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>DEL'S DEN | Ride The Dream</title>
+<title>DEL'S DEN | Motorbike Spare Parts</title>
 
 <style>
 *{
@@ -19,118 +19,85 @@ color:white;
 }
 
 header{
+padding:20px 8%;
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:20px 8%;
 background:#111;
 border-bottom:1px solid #222;
 }
 
 .logo{
-font-size:32px;
+font-size:28px;
 font-weight:bold;
-color:#f7c948;
+color:#ff9900;
 }
 
 nav a{
 color:white;
 text-decoration:none;
-margin-left:25px;
-font-size:18px;
-}
-
-nav a:hover{
-color:#f7c948;
+margin-left:20px;
+font-size:16px;
 }
 
 .hero{
-height:90vh;
-display:flex;
-justify-content:center;
-align-items:center;
+padding:100px 8%;
 text-align:center;
-padding:20px;
-background:linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.7)),
-url('https://images.unsplash.com/photo-1511994298241-608e28f14fde?auto=format&fit=crop&w=1400&q=80');
-background-size:cover;
-background-position:center;
 }
 
-.hero-content h1{
-font-size:64px;
+.hero h1{
+font-size:55px;
 margin-bottom:20px;
+color:#ff9900;
 }
 
-.hero-content p{
+.hero p{
 font-size:22px;
-color:#ddd;
 margin-bottom:30px;
+color:#ccc;
 }
 
-.btn{
+button{
 padding:15px 35px;
-background:#f7c948;
-color:black;
-font-size:20px;
+font-size:18px;
+background:#ff9900;
 border:none;
 border-radius:8px;
 cursor:pointer;
 font-weight:bold;
-transition:0.3s;
 }
 
-.btn:hover{
-transform:scale(1.05);
+button:hover{
+background:#ffaa22;
 }
 
 .products{
-padding:70px 8%;
-}
-
-.products h2{
-text-align:center;
-font-size:42px;
-margin-bottom:40px;
-color:#f7c948;
-}
-
-.grid{
+padding:60px 8%;
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
 gap:25px;
 }
 
 .card{
-background:#151515;
-padding:20px;
-border-radius:14px;
-text-align:center;
-box-shadow:0 0 15px rgba(0,0,0,.4);
-}
-
-.card img{
-width:100%;
-height:220px;
-object-fit:cover;
+background:#111;
+padding:25px;
 border-radius:12px;
-margin-bottom:15px;
+text-align:center;
+border:1px solid #222;
 }
 
 .card h3{
 margin-bottom:10px;
-font-size:24px;
+color:#ff9900;
 }
 
-.price{
-color:#f7c948;
-font-size:24px;
-margin-bottom:15px;
+.card p{
+color:#ccc;
 }
 
 footer{
-text-align:center;
 padding:30px;
+text-align:center;
 background:#111;
 margin-top:50px;
 color:#888;
@@ -145,56 +112,50 @@ color:#888;
 
 <nav>
 <a href="#">Home</a>
-<a href="#">Bikes</a>
+<a href="#">Products</a>
 <a href="#">Contact</a>
 </nav>
 </header>
 
 <section class="hero">
-<div class="hero-content">
-<h1>Ride The Dream</h1>
-<p>Premium Bikes For Champions</p>
-<button class="btn" onclick="buy()">Buy Now</button>
-</div>
+<h1>Premium Motorbike Spare Parts</h1>
+<p>Brake Pads • Chains • Tyres • Mirrors • Engine Parts • Oils</p>
+
+<button onclick="buy()">Order Parts</button>
 </section>
 
 <section class="products">
-<h2>Featured Bikes</h2>
-
-<div class="grid">
 
 <div class="card">
-<img src="https://images.unsplash.com/photo-1507035895480-2b3156c31fc8?auto=format&fit=crop&w=800&q=80">
-<h3>Mountain Bike</h3>
-<div class="price">KSh 35,000</div>
-<button class="btn" onclick="buy()">Order</button>
+<h3>Brake Pads</h3>
+<p>High quality durable brake pads.</p>
 </div>
 
 <div class="card">
-<img src="https://images.unsplash.com/photo-1541625602330-2277a4c46182?auto=format&fit=crop&w=800&q=80">
-<h3>Road Bike</h3>
-<div class="price">KSh 48,000</div>
-<button class="btn" onclick="buy()">Order</button>
+<h3>Chains & Sprockets</h3>
+<p>Strong genuine chain kits.</p>
 </div>
 
 <div class="card">
-<img src="https://images.unsplash.com/photo-1571068316344-75bc76f77890?auto=format&fit=crop&w=800&q=80">
-<h3>Electric Bike</h3>
-<div class="price">KSh 72,000</div>
-<button class="btn" onclick="buy()">Order</button>
+<h3>Tyres</h3>
+<p>Road grip and long life tyres.</p>
 </div>
 
+<div class="card">
+<h3>Engine Parts</h3>
+<p>Pistons, plugs, filters and more.</p>
 </div>
+
 </section>
 
 <footer>
-© 2026 DEL'S DEN. All Rights Reserved.
+DEL'S DEN © 2026 | Ride With Power 🔥
 </footer>
 
 <script>
 async function buy(){
 
-const phone = prompt("Enter your M-Pesa Number:");
+const order = prompt("Enter Bike Model + Part Needed:");
 
 try{
 
@@ -203,7 +164,7 @@ method:"POST",
 headers:{
 "Content-Type":"application/json"
 },
-body:JSON.stringify({phone})
+body:JSON.stringify({order})
 });
 
 const data = await res.json();
@@ -218,10 +179,6 @@ alert("Server error ❌");
 
 }
 </script>
-<a href="https://wa.me/254714581031" target="_blank">
-<button style="background:green;color:white;padding:15px;border:none;border-radius:8px;cursor:pointer;">
-WhatsApp Us
-</button>
-</a>
+
 </body>
 </html>
