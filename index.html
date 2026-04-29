@@ -13,13 +13,23 @@
 
 <script>
 async function buy(){
-    try {
-        const res = await fetch('https://dels-den.onrender.com');
-        const text = await res.text();
-        alert(text);
-    } catch (error) {
-        alert("Error connecting to server ❌");
-    }
+  const phone = prompt("Enter your M-Pesa number:");
+
+  try {
+    const res = await fetch("https://dels-den.onrender.com/order", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({ phone })
+    });
+
+    const data = await res.json();
+    alert(data.message);
+
+  } catch (error) {
+    alert("Error connecting to server ❌");
+  }
 }
 </script>
 
