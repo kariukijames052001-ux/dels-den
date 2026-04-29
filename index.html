@@ -10,152 +10,272 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:Arial, Helvetica, sans-serif;
+font-family:Arial, sans-serif;
 }
 
 body{
-background:#0d0d0d;
-color:white;
+background:#f5f5f5;
+color:#111;
 }
 
-header{
-padding:20px 8%;
+.topbar{
+background:#111;
+color:#fff;
+padding:10px 5%;
 display:flex;
 justify-content:space-between;
+font-size:14px;
+flex-wrap:wrap;
+}
+
+.header{
+background:#000;
+padding:18px 5%;
+display:flex;
 align-items:center;
-background:#111;
-border-bottom:1px solid #222;
+gap:20px;
+flex-wrap:wrap;
 }
 
 .logo{
-font-size:28px;
+font-size:38px;
 font-weight:bold;
-color:#ff9900;
+color:#fff;
 }
 
-nav a{
-color:white;
-text-decoration:none;
-margin-left:20px;
+.logo span{
+color:#f9a602;
+}
+
+.search{
+flex:1;
+display:flex;
+min-width:260px;
+}
+
+.search input{
+flex:1;
+padding:14px;
+border:none;
+outline:none;
+border-radius:8px 0 0 8px;
 font-size:16px;
 }
 
-.hero{
-padding:100px 8%;
-text-align:center;
-}
-
-.hero h1{
-font-size:55px;
-margin-bottom:20px;
-color:#ff9900;
-}
-
-.hero p{
-font-size:22px;
-margin-bottom:30px;
-color:#ccc;
-}
-
-button{
-padding:15px 35px;
-font-size:18px;
-background:#ff9900;
+.search button{
+padding:14px 22px;
 border:none;
-border-radius:8px;
+background:#f9a602;
+font-weight:bold;
+border-radius:0 8px 8px 0;
 cursor:pointer;
+}
+
+.icons{
+display:flex;
+gap:18px;
+color:#fff;
+font-size:15px;
+}
+
+.nav{
+background:#111;
+padding:14px 5%;
+display:flex;
+gap:25px;
+flex-wrap:wrap;
+}
+
+.nav a{
+color:#fff;
+text-decoration:none;
 font-weight:bold;
 }
 
-button:hover{
-background:#ffaa22;
+.hero{
+background:linear-gradient(90deg,#000,#1c1c1c);
+color:#fff;
+padding:70px 5%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+flex-wrap:wrap;
+gap:30px;
 }
 
-.products{
-padding:60px 8%;
+.hero-text{
+max-width:600px;
+}
+
+.hero h1{
+font-size:56px;
+line-height:1.1;
+margin-bottom:20px;
+}
+
+.hero h1 span{
+color:#f9a602;
+}
+
+.hero p{
+font-size:20px;
+color:#ddd;
+margin-bottom:25px;
+}
+
+.cta{
+padding:16px 35px;
+background:#f9a602;
+border:none;
+font-size:18px;
+font-weight:bold;
+border-radius:8px;
+cursor:pointer;
+}
+
+.hero-img{
+font-size:160px;
+}
+
+.section{
+padding:50px 5%;
+}
+
+.section h2{
+margin-bottom:25px;
+font-size:32px;
+}
+
+.grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:25px;
+grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+gap:20px;
 }
 
 .card{
-background:#111;
+background:#fff;
 padding:25px;
 border-radius:12px;
+box-shadow:0 5px 15px rgba(0,0,0,.08);
 text-align:center;
-border:1px solid #222;
 }
 
 .card h3{
 margin-bottom:10px;
-color:#ff9900;
+font-size:20px;
 }
 
-.card p{
-color:#ccc;
+.price{
+color:#f9a602;
+font-weight:bold;
+margin-top:10px;
+font-size:22px;
 }
 
 footer{
-padding:30px;
+background:#000;
+color:#aaa;
 text-align:center;
-background:#111;
-margin-top:50px;
-color:#888;
+padding:30px;
+margin-top:40px;
+}
+
+.whatsapp{
+position:fixed;
+right:20px;
+bottom:20px;
+background:#25d366;
+color:#fff;
+padding:15px 18px;
+border-radius:50px;
+text-decoration:none;
+font-weight:bold;
+}
+
+@media(max-width:768px){
+.hero h1{font-size:38px;}
+.hero-img{font-size:90px;}
 }
 </style>
 </head>
 
 <body>
 
-<header>
-<div class="logo">DEL'S DEN</div>
+<div class="topbar">
+<div>🚚 Fast Delivery Across Kenya | ✅ Genuine Parts | 💰 Best Prices</div>
+<div>Need Help? WhatsApp 0723 456 789</div>
+</div>
 
-<nav>
+<div class="header">
+<div class="logo">DEL'S <span>DEN</span></div>
+
+<div class="search">
+<input type="text" placeholder="Search brake pads, chains, oil...">
+<button>Search</button>
+</div>
+
+<div class="icons">
+<div>👤 Account</div>
+<div>❤ Wishlist</div>
+<div>🛒 Cart</div>
+</div>
+</div>
+
+<div class="nav">
 <a href="#">Home</a>
-<a href="#">Products</a>
+<a href="#">Brands</a>
+<a href="#">Shop</a>
+<a href="#">Deals</a>
+<a href="#">Track Order</a>
 <a href="#">Contact</a>
-</nav>
-</header>
+</div>
 
 <section class="hero">
-<h1>Premium Motorbike Spare Parts</h1>
-<p>Brake Pads • Chains • Tyres • Mirrors • Engine Parts • Oils</p>
+<div class="hero-text">
+<h1>Motorbike Spare Parts <span>& Accessories</span></h1>
+<p>Premium quality parts for Boxer, TVS, Bajaj, Honda and more.</p>
+<button class="cta" onclick="buy()">ORDER NOW</button>
+</div>
 
-<button onclick="buy()">Order Parts</button>
+<div class="hero-img">🏍️</div>
 </section>
 
-<section class="products">
+<section class="section">
+<h2>Shop By Category</h2>
 
-<div class="card">
-<h3>Brake Pads</h3>
-<p>High quality durable brake pads.</p>
+<div class="grid">
+<div class="card"><h3>Brake Pads</h3><p>Safe stopping power</p></div>
+<div class="card"><h3>Chains</h3><p>Strong chain kits</p></div>
+<div class="card"><h3>Tyres</h3><p>Road grip tyres</p></div>
+<div class="card"><h3>Engine Parts</h3><p>Pistons & plugs</p></div>
+<div class="card"><h3>Oil</h3><p>4T Engine oil</p></div>
+<div class="card"><h3>Mirrors</h3><p>Body accessories</p></div>
 </div>
+</section>
 
-<div class="card">
-<h3>Chains & Sprockets</h3>
-<p>Strong genuine chain kits.</p>
+<section class="section">
+<h2>Best Deals This Week</h2>
+
+<div class="grid">
+<div class="card"><h3>Brake Pads</h3><p>Front set</p><div class="price">KES 600</div></div>
+<div class="card"><h3>Chain Kit</h3><p>Heavy duty</p><div class="price">KES 1,800</div></div>
+<div class="card"><h3>Tyre</h3><p>3.00-18</p><div class="price">KES 3,200</div></div>
+<div class="card"><h3>Spark Plug</h3><p>NGK</p><div class="price">KES 250</div></div>
 </div>
-
-<div class="card">
-<h3>Tyres</h3>
-<p>Road grip and long life tyres.</p>
-</div>
-
-<div class="card">
-<h3>Engine Parts</h3>
-<p>Pistons, plugs, filters and more.</p>
-</div>
-
 </section>
 
 <footer>
-DEL'S DEN © 2026 | Ride With Power 🔥
+DEL'S DEN © 2026 | Ride The Dream 🔥
 </footer>
+
+<a class="whatsapp" href="https://wa.me/254714581031" target="_blank">WhatsApp</a>
 
 <script>
 async function buy(){
 
 const order = prompt("Enter Bike Model + Part Needed:");
+
+if(!order) return;
 
 try{
 
@@ -176,7 +296,6 @@ alert(data.message);
 alert("Server error ❌");
 
 }
-
 }
 </script>
 
